@@ -1,6 +1,6 @@
 html,body{
     height: 100%;
-    background-image: url("./assets/gambar/login.jpg");
+    background-image: url("../gambar/login.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }

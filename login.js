@@ -29,7 +29,7 @@ loginForm.addEventListener("submit", (Event) => {
         }
     })
     if (pindahHalaman) {
-        window.location.href = "./landingpage.html"
+        window.location.href = "./add_patient.html"
     }
     else {
         alert("Username dan password anda salah")
