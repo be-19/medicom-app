@@ -10,9 +10,8 @@ let save = document.getElementById(`buttonSave`);
 let patientForm = document.querySelector(`#form-patient`);
 
 let arr = []; // data global
-// console.log(arr)
+ambilData();
 
-console.log(patientForm);
 // API
 async function kirimDataApi(r) {
     let apiUrl = await fetch(
@@ -27,37 +26,20 @@ async function kirimDataApi(r) {
     );
 }
 
-// async function ambilData() {
-//     let ambilUrl = await fetch(
-//         `https://634fe28278563c1d82b28ff3.mockapi.io/pasien`
-//     );
-//     let resp = await ambilUrl.json();
-//     let copData = [...resp];
-//     arr.push(copData);
-// console.log(resp);
-// console.log(copData);
+async function ambilData() {
+    let ambilUrl = await fetch(
+        `https://634fe28278563c1d82b28ff3.mockapi.io/pasien`
+    );
+    let resp = await ambilUrl.json();
+    console.log(resp);
+    arr = [...resp];
 
-//     save.addEventListener(`click`, (z) => {
-//         z.preventDefault();
-//         arr.forEach((item) => {
-//             let coba = item.includes([...arr, ...copData]);
-//             console.log(item);
-//             console.log(coba);
-//         })
-//     });
-// }
-// ambilData();
-// console.log(arr);
-
-// buat variabel array kosong
-// fungsi fetch ambil data
-// copy data yg di fetch ke variabel global
-// ketika tombol submit di klik, looping data global tadi dan cocokan data yang diinput
-// kalau data yg sudah ada maka muncul alert true data sudah ada / false register
+}
 
 // SUBMIT
-save.addEventListener(`click`, (r) => {
-    r.preventDefault();
+save.addEventListener(`click`, (e) => {
+    e.preventDefault();
+    let i = false;
 
     let regPatient = {
         name: dataNama.value,
@@ -67,27 +49,35 @@ save.addEventListener(`click`, (r) => {
         alamat: dataAlamat.value,
         no_telp: dataTelp.value,
     };
+    console.log(arr);
 
-    kirimDataApi(regPatient);
-    patientForm.reset();
+    arr.forEach((item) => {
+
+        if (dataNik.value === item.nik) {
+            i = true;
+
+        }
+    })
+    if (i) {
+        alert(`sudah TERDAFTAR dan pastikan NIK anda benar`);
+    } else {
+        alert(`registrasi`);
+        kirimDataApi(regPatient);
+        clear();
+    }
+
 });
 
 // RESET
 function resetFungsi() {
     let resetForm = document.getElementById(`buttonReset`);
     resetForm.addEventListener(`click`, () => {
-        patientForm.reset();
+        clear();
     });
 }
 
-// API
-// async function getApi(){
-//     let apiUrl = `https://634fe28278563c1d82b28ff3.mockapi.io/pasien`;
-//     let res = await fetch(apiUrl);
-//     console.log(res);
-//     let result = await res.json();
+function clear() {
+    patientForm.reset();
+}
 
-//     console.log(result);
-// }
-// getApi();
 
