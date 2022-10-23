@@ -4,11 +4,9 @@ html,body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-nav{
-    background-color: #eeeeee;
-}
+
 .navbar-brand{
-    color: #555555;
+    color: #fff;
     font-weight: 600;
 }
 #form{
