@@ -23,7 +23,7 @@
    
 } 
 .banner {
-    background-image: url("../gambar/2.jpg")
+    background-image: url("https://medicom-app.vercel.app/assets/gambar/2.jpg")
     no-repeat center center;
     background-size: cover;
     padding-top: 20%;
@@ -126,7 +126,7 @@
 }
 
   .features .image-box {
-    background-image: url("../gambar/featuress.jpg") center center no-repeat;
+    background-image: url("https://medicom-app.vercel.app/assets/gambar/featuress.jpg") center center no-repeat;
     background-size: cover;
     min-height: 500px;
   }
