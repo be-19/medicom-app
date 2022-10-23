@@ -24,6 +24,7 @@ async function kirimDataApi(r) {
             },
         }
     );
+    window.location.href = "display.html"
 }
 
 async function ambilData() {
@@ -62,10 +63,11 @@ save.addEventListener(`click`, (e) => {
     if (i) {
         alert(`sudah TERDAFTAR dan pastikan NIK anda benar`);
     } else {
-        alert(`registrasi`);
+        alert(`registrasi berhasil`);
         kirimDataApi(regPatient);
         clear();
     }
+
 });
 
 
@@ -81,4 +83,7 @@ function clear() {
     patientForm.reset();
 }
 
-
+cancel.addEventListener(`click`, (f) => {
+    f.preventDefault();
+    window.location.href = "display.html";
+})
