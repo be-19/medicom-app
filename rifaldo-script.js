@@ -31,8 +31,9 @@ async function ambilData() {
         `https://634fe28278563c1d82b28ff3.mockapi.io/pasien`
     );
     let resp = await ambilUrl.json();
-    console.log(resp);
+    // console.log(resp);
     arr = [...resp];
+    setTimeout(() => ambilData(ambilUrl), 10000); //  fungsi pembaruan setiap 10 detik terakhir
 
 }
 
@@ -65,8 +66,8 @@ save.addEventListener(`click`, (e) => {
         kirimDataApi(regPatient);
         clear();
     }
-
 });
+
 
 // RESET
 function resetFungsi() {
