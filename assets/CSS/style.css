@@ -1,26 +1,29 @@
-* {
-  margin: 0;
-  padding: 0;
+
+*{
+    margin:0;
+    padding:0;
 }
-#nav {
-  position: sticky;
-  top: 0;
-  z-index: 1001;
+#nav{
+     position: sticky;
+     top:0;
+     z-index:1001;
 }
-.navbar {
-  justify-content: space-around;
+.navbar{
+    justify-content: space-around;
 }
-.navbar-brand span {
-  font-weight: bolder;
-  color: rgb(8, 8, 8);
+.navbar-brand span{
+    font-weight: bolder;
+    color:#fff
 }
-.navbar-nav li {
-  padding: 0 10px;
+.navbar-nav li{
+    padding:0 10px;
 }
-.navbar-nav li a {
-  color: rgb(5, 5, 5);
-  font-weight: bolder;
-}
+.navbar-nav li a{
+    color:#fff;
+    font-weight: bolder;
+   
+} 
+
 .banner {
   background-image: url("https://medicom-app.vercel.app/assets/gambar/2.jpg");
   background-repeat: no-repeat;
